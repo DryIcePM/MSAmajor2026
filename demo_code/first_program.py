@@ -29,7 +29,7 @@ print(type(half_age))
 
 #write 3 statements using string interpolation (f string) to print descriptive sentences for the data types
 #"variable age is an int"
-print(f"Varible age is an int because although it is a number, it does not contain a decimal point like variable weight does.\nDue to the tenths place number in variable weight, it becomes a float.\nFinally, variable half_age is a float because when it divides it gains a decimal in the final answer.")
+print(f"Varible age is an {type(age)}.\nVariable weight is an {type(weight)}.\nVariable half_age is an {type(half_age)}.")
 
 number_1 = "5"
 number_2 = "7"
