@@ -2,6 +2,7 @@ def main():
     #create a list of strings, integers, and different values
     names = ["John", "Mary", "Alice", "Bob"]
     list_of_integers = [10, 16, 24, 42, 14, 9]
+    
     random_type_list = ["Cyd", 15, 22.3, True, "Frank"]
     empty_list = []
     
@@ -42,6 +43,10 @@ def main():
     
     print(f"Sum of all integers: {sum_of_all_integers}")
 
+    #Calculate the average of all integers in list
+    avg = sum_of_all_integers / len(list_of_integers)
+    print(f"avg of all integers: {avg:.2f}")
+
     #does the list contain a specific item
     search_name = "Veronica"
     if search_name not in names:
@@ -49,29 +54,19 @@ def main():
     else:
         print(f"{search_name} is in the names list")
 
+    #find the largest value in a list
+    #set max_value to the first value of the first item in the list
+    max_value = list_of_integers[0]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    #loop over the entire list 
+    for current_value in list_of_integers:
+        #if current value > max_value, set max_value to current_value
+        if current_value > max_value:
+            max_value = current_value
+    
+    #after the loop is done, print the largest value
+    print(f"\nlist of integers: {list_of_integers}")
+    print(f"largest value in the list of integers: {max_value}")
 
 
 
