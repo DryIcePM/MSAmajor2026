@@ -24,6 +24,10 @@ def main():
 
 
 
+    #print all the data in the student scores dictionary
+    print("\nprint all students data\-------------")
+    for student in student_scores:
+        print(f"{student}: {student_scores[student]}")
 
 
 
