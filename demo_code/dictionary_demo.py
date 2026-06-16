@@ -29,6 +29,58 @@ def main():
     for student in student_scores:
         print(f"{student}: {student_scores[student]}")
 
+    #Create a dictionary to store car info
+    #make, model, year, value, engine size
+    car_1 = {"make": "Ferrari", "model": "F-50", "year": "2024", "value": "500000", "engine size": "4.8"}
+    print("\nGet all car info\n------------------")
+    for key, value in car_1.items():
+        print(f"{key}: {value}")
+
+    #create a second car
+    car_2 = {"make": "Honda", "model": "accord", "year": "2024", "value": "18000", "engine size": "2.4"}
+    car_1["transmission"] = "manual"
+    car_2["transmission"] = "automatic"
+    dictionary_list = [car_1, car_2]
+
+
+
+    #Display info for all cars
+    print("\nDisplay info for all cars\n--------------")
+
+    #loop over all the cars
+    for car in dictionary_list:
+        print("\nCar Info\n-------------------")
+
+        #loop over the items in the dictionary
+        for feature, value in car.items():
+            print(f"{feature}: {value}")
+
+    #create a dictionary of dictionaries
+    car_dictionary = {"Ferrari": car_1, "Honda": car_2}
+
+    #Print all car info from the dictionary
+    print("\nCar info from dictionaries\n--------------")
+
+    for make, car in car_dictionary.items():
+        print(f"\n{make}")
+        for feature, value in car.items():
+            print(f"{feature}: {value}")
+
+    #Getting a value from a dictonary when no key exists
+    key = "Transmission"
+    car_1.keys()
+    try:
+        print(f"{car_1["key"]}")
+    except:
+        print(f"ERROR: {key} key does not exist in the dictionary")
+
+    if key not in car_1.keys():
+        print(f"ERROR: {key} key does not exist in the dictionary")
+    else: 
+        print(f"{car_1["key"]}")
+
+
+
 
 
 
