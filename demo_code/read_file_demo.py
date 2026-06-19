@@ -7,8 +7,11 @@ def main():
     #use a loop to read the contents of the file line by line
     for line_of_data in data_file:
         #split the line at the comma
-        item_name_and_price = line_of_data.split((,))
+        item_name_and_price = line_of_data.split(",")
         print(item_name_and_price)
+
+        item_name = item_name_and_price[0]
+        item_price = float(item_name_and_price[1])
         #get the item and price from the list
         #create an entry in the dictionary for the item and price
     #close the file
