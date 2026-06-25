@@ -20,7 +20,7 @@ def get_student_data(url:str):
     response_json = response.json()
 
     #return the response
-    return response.json
+    return response.json()
 
 #create a route for the website index/root/homepage. will display all student data
 @app.route('/', methods = ['GET'])
@@ -31,7 +31,16 @@ def index():
     #get the student data
     student_data = get_student_data(url)
     return render_template('index.html', student_data=student_data)
-
+#create a route to get requests
+@app.route('/majors', methods=['GET'])
+def majors_get():
+    #get the list of majors
+    url = "http://127.0.0.1:5000/api/majors/all"
+    major_list = get_student_data(url)
+    #snd the list of majors to the majors template to populate the menu
+    return render_template('majors.html', major_list = major_list)
+#create a route for the majors page to respond to
+#post request
     
 
 #run the flask app
