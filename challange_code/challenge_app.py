@@ -41,7 +41,33 @@ def majors_get():
     return render_template('majors.html', major_list = major_list)
 #create a route for the majors page to respond to
 #post request
+@app.route('/majors', methods = ['POST'])
+def majors_post():
+    #get the list of majors 
+    url = "http://127.0.0.1:5000/api/majors/all"
+    major_list = get_student_data(url)
+
+    #get the form data: the chosen major from the select menu
+    major = request.form.get('major')
+
+    #if major is invalid display error message and reload page
+    if major == "":
+        flash("ERROR: You must select a major")
+        return redirect(url_for('majors_get'))
     
+    #create a url to get students from the major
+    url = f"http://127.0.0.1:5000/api/majors/{major}"
+
+    #send the request and get the response
+    result_list = get_student_data(url)
+    print(result_list)
+
+    #send all the data to the majors template to be displayed in the browser
+    return render_template('majors.html', major_list=major_list, result_list=result_list, major=major)
+
+
+
+
 
 #run the flask app
 app.run(port=5001)
