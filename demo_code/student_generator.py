@@ -1,4 +1,19 @@
 from Student import Student
+from datetime import datetime
+
+"""
+Function to write an error message to a log file
+input: string error message
+output: none
+"""
+def write_to_error_log(message:str) -> None:
+    the_date = datetime.now()
+    #open the log file in append mode:error_log.txt
+    with open("error_log.txt", "a") as log_file:
+        log_file.write(f"{the_date}: {message}\n")
+        #write an error message to the file in the format
+        #6/26/2026: Error in data file on line 5
+    return
 
 """
 Function to return a list of student objects
